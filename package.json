@@ -1,0 +1,21 @@
+{
+  "name": "pijama-bem-monorepo",
+  "version": "0.0.0",
+  "author": "Evgeniy Malchenko",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn run build:kit && yarn run build:storybook",
+    "build:kit": "yarn workspace pijama-ui run build",
+    "build:storybook": "yarn workspace pijama-ui-storybook build",
+    "dev": "concurrently \"yarn:dev:*\"",
+    "dev:kit": "yarn workspace pijama-ui run dev",
+    "dev:storybook": "yarn workspace pijama-ui-storybook run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}

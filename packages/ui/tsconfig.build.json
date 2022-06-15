@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "components/es6",
+    "baseUrl": "src",
+    "declarationDir": "./components"
+  },
+  "include": ["src/**/*", "global.d.ts"],
+  "exclude": ["node_modules", "src/**/*.test.tsx", "src/**/*.stories.tsx"]
+}

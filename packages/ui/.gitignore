@@ -1,0 +1,9 @@
+/.idea
+/*.iml
+/*.log
+/node_modules
+/packages/*/node_modules
+/packages/*/lib
+.DS_Store
+
+components/
