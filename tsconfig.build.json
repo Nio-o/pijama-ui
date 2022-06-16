@@ -2,9 +2,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "components/es6",
+    "outDir": "./",
     "baseUrl": "src",
-    "declarationDir": "./components"
+    "declarationDir": "./"
   },
   "include": ["src/**/*", "global.d.ts"],
   "exclude": ["node_modules", "src/**/*.test.tsx", "src/**/*.stories.tsx"]

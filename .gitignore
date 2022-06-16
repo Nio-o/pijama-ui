@@ -4,7 +4,14 @@
 /*.iml
 
 /node_modules
-/packages/*/node_modules
-/packages/*/dist
 
 **/*.log
+
+/*.log
+/node_modules
+
+# Dist (match with src/*)
+/ui
+
+# Storybook assets
+/storybook-static

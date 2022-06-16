@@ -12,7 +12,11 @@
     "moduleResolution": "node",
     "emitDeclarationOnly": false,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "pijama/*": ["./*"]
+    }
   },
   "exclude": ["node_modules"]
 }
