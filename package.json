@@ -16,6 +16,7 @@
     "dev:storybook": "yarn workspace pijama-ui-storybook run dev"
   },
   "devDependencies": {
+    "chromatic": "^6.5.6",
     "concurrently": "^7.2.2"
   }
 }

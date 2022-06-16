@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>ЯМы Кнопка</Button>
+  <Button {...args}>ЯМы Кнопка TEXT</Button>
 );
 
 export const ButtonB2C = Template.bind({});
