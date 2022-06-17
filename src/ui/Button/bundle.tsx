@@ -1,8 +1,9 @@
 import { compose, composeU } from '@bem-react/core'
 
-import { withThemeB2B } from './_theme/Button_theme_b2b'
-import { withTypeLink } from './_type/Button_type_link'
+import { withSizeL } from './_size/Button_size_l'
+import { withSizeM } from './_size/Button_size_m'
+import { withSizeS } from './_size/Button_size_s'
 
 import { Button as BaseButton } from './Button'
 
-export const Button = compose(composeU(withThemeB2B), composeU(withTypeLink))(BaseButton)
+export const Button = compose(composeU(withSizeS, withSizeM, withSizeL))(BaseButton)
