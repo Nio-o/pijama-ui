@@ -15,7 +15,7 @@ module.exports = {
     storyStoreV7: true,
   },
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: 'react-docgen',
   },
   async viteFinal(config, { configType }) {
     return {
