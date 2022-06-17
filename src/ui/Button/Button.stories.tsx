@@ -11,10 +11,11 @@ export default {
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = ({ children, ...args }) => (
-  <Button {...args}>asde{children}</Button>
+  <Button {...args}>{children}</Button>
 )
 
 export const Playground = Template.bind({})
+Template.args = { children: 'Заказать карту' }
 
 export const ButtonB2C = Template.bind({})
 ButtonB2C.args = {
