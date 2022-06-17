@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { cn } from '@bem-react/classname'
 
 import s from './Button.module.js'
@@ -8,8 +9,17 @@ export interface ButtonProps {
   children?: React.ReactNode
 }
 
+interface ButtonInternalProps {
+  as?: 'div' | 'a'
+}
+
 const cnButton = cn(s.Button)
 
-export const Button = ({ className, children }: ButtonProps): JSX.Element => {
-  return <div className={cnButton(undefined, [className])}>{children}</div>
+export const Button = (props: ButtonProps): JSX.Element => {
+  const {
+    as: AsComponent = 'div',
+    children,
+    className,
+  } = props as ButtonProps & ButtonInternalProps
+  return <AsComponent className={cnButton(undefined, [className])}>{children}</AsComponent>
 }

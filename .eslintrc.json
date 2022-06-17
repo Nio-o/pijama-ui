@@ -2,10 +2,7 @@
   "extends": ["eslint-config-qiwi", "prettier"],
   "overrides": [
     {
-      "files": ["*.tsx"],
-      "rules": {
-        "react/no-children-prop": "off"
-      }
+      "files": ["*.tsx"]
     }
   ],
   "rules": {
@@ -14,16 +11,18 @@
       "error",
       { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ],
+    "simple-import-sort/exports": "error",
     "simple-import-sort/imports": [
       "error",
       {
         "groups": [
-          ["^\\u0000"],
-          ["^react", "^@?\\w"],
-          ["^@qiwi(/.*|$)"],
-          ["^@qw(/.*|$)"],
+          ["^react"],
+          ["^@bem-react"],
+          ["^@?\\w"],
+          ["^pijama"],
+          ["^\\.\\/_"],
           ["^\\."],
-          ["^\\u0000\\."]
+          ["\\.module\\.js$"]
         ]
       }
     ],
