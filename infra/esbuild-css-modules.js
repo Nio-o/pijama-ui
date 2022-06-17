@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/consistent-function-scoping */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { readFile, writeFile, mkdir } = require('node:fs/promises')
 const postcss = require('postcss')
 const path = require('node:path')
@@ -11,7 +13,7 @@ const PLUGIN_NAMESPACE = PLUGIN_NAME
 
 const CWD = process.cwd()
 
-const onCssModuleLoad = (build, options) => async (args) => {
+const onCssModuleLoad = (_build, _options) => async (args) => {
   const relativeCssPath = './' + path.basename(args.pluginData.cssOutPath)
   return {
     contents: [
@@ -28,7 +30,7 @@ const onCssModuleResolve = (build, options) => async (args) => {
   const processor = postcss([
     cssModules({
       ...options.cssModules,
-      generateScopedName: function (name, filename, css) {
+      generateScopedName: function (name, _filename, _css) {
         // e.g. ./src/ui/Button for ./src/ui/Button/**/*
         const pathPathForHash = args.path.split(path.sep).slice(0, 4).join(path.sep)
 
