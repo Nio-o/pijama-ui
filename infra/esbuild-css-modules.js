@@ -33,9 +33,6 @@ const onCssModuleResolve = (build, options) => async (args) => {
       generateScopedName: function (name, _filename, _css) {
         // e.g. ./src/ui/Button for ./src/ui/Button/**/*
         const pathPathForHash = args.path.split(path.sep).slice(0, 4).join(path.sep)
-
-        console.log(pathPathForHash)
-
         const hash = crypto.createHash('md5').update(pathPathForHash).digest('base64url')
 
         return ['pijama-', hash, name].join('--')
