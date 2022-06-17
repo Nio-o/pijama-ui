@@ -1,10 +1,10 @@
 .Button {
+  color: var(--button-text-color);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   background: rgb(255, 140, 0);
   border: none;
   border-radius: 20px;
   box-shadow: none;
   display: inline-block;
-  color: #ffffff;
   padding: 16px 32px;
 }
