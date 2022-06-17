@@ -1,0 +1,4 @@
+.Theme_variant_default {
+  --color-base: #fff;
+  --button-text-color: var(--color-base);
+}
