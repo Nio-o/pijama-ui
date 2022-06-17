@@ -1,2 +1,4 @@
-export * from './_theme/Button_theme_b2b'
+export * from './_size/Button_size_l'
+export * from './_size/Button_size_m'
+export * from './_size/Button_size_s'
 export * from './Button'
