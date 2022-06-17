@@ -1,7 +1,8 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { withDefaultTheme } from './decorators/withDefaultTheme'
+import { withStrictMode } from './decorators/withStrictMode'
 
-export const decorators = [withDefaultTheme]
+export const decorators = [withStrictMode, withDefaultTheme]
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
