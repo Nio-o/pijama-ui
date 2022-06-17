@@ -9,25 +9,20 @@ module.exports = {
   ],
   framework: '@storybook/react',
   core: {
-    builder: '@storybook/builder-vite',
+    builder: 'webpack5',
   },
   features: {
     storyStoreV7: true,
   },
   typescript: {
-    reactDocgen: 'react-docgen',
+    reactDocgen: 'react-docgen-typescript',
   },
-  async viteFinal(config, { configType }) {
-    return {
-      ...config,
-      resolve: {
-        alias: [
-          {
-            find: 'pijama',
-            replacement: path.resolve(__dirname, '../'),
-          },
-        ],
-      },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      pijama: path.resolve(__dirname, '../'),
     }
+
+    return config
   },
 }
