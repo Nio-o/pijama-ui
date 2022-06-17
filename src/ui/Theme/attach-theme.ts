@@ -24,9 +24,11 @@ export const attachTheme = ({ theme, root }: AttachThemeOptions): void => {
     root.classList.remove(maybePrevClassName)
   }
 
-  const newClassName = theme?.className || ''
-  prevClassNames.set(root, newClassName)
+  const newClassName = theme?.className
   if (newClassName) {
+    prevClassNames.set(root, newClassName)
     root.classList.add(newClassName)
+  } else {
+    prevClassNames.delete(root)
   }
 }
