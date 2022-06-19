@@ -9,7 +9,7 @@ const format = 'esm'
 const outDir = './'
 
 const getEntryPoints = () =>
-  [...glob.sync('./src/**/*.ts(x)?'), ...glob.sync('./src/**/*.module.css')].sort()
+  [...glob.sync('./src/**/*!(*.stories).ts(x)?'), ...glob.sync('./src/**/*.module.css')].sort()
 
 const watch = process.argv.includes('--watch')
 
