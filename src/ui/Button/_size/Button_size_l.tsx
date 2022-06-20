@@ -1,6 +1,6 @@
 import { withBemMod } from '@bem-react/core'
 
-import type { ButtonProps } from '../Button.js'
+import type { ButtonProps } from '../Button'
 
 import s from './Button_size_l.module.js'
 

@@ -6,6 +6,7 @@ module.exports = {
     '@storybook/addon-links',
     { name: '@storybook/addon-essentials', options: { docs: false } },
     '@storybook/addon-interactions',
+    '@storybook/addon-storysource',
   ],
   framework: '@storybook/react',
   core: {
