@@ -5,6 +5,8 @@ const postcss = require('postcss')
 const path = require('node:path')
 const cssModules = require('postcss-modules')
 const crypto = require('node:crypto')
+const postcssNested = require('postcss-nested')
+const postcssMixins = require('postcss-mixins')
 
 const CSS_MODULE_REGEXP = /\.module\.css$/i
 const CSS_MODULE_JS_REGEXP = /\.module\.css\.js$/i
@@ -12,14 +14,12 @@ const PLUGIN_NAME = 'pijama-css-modules'
 const PLUGIN_NAMESPACE = PLUGIN_NAME
 
 const CWD = process.cwd()
+const MIXINS_DIR = path.resolve(__dirname, '../src/**/*.mixin.css')
 
 const onCssModuleLoad = (_build, _options) => async (args) => {
   const relativeCssPath = './' + path.basename(args.pluginData.cssOutPath)
   return {
-    contents: [
-      `import "${relativeCssPath}"`,
-      `export default ${JSON.stringify(args.pluginData.tokens)};`,
-    ].join('\n'),
+    contents: [`import "${relativeCssPath}"`, `export default ${JSON.stringify(args.pluginData.tokens)};`].join('\n'),
   }
 }
 
@@ -28,6 +28,8 @@ const onCssModuleResolve = (build, options) => async (args) => {
   const source = await readFile(sourceFullPath)
   let tokens = {}
   const processor = postcss([
+    postcssNested(),
+    postcssMixins({ mixinsDir: MIXINS_DIR }),
     cssModules({
       ...options.cssModules,
       generateScopedName: function (name, _filename, _css) {
@@ -35,7 +37,7 @@ const onCssModuleResolve = (build, options) => async (args) => {
         const pathPathForHash = args.path.split(path.sep).slice(0, 4).join(path.sep)
         const hash = crypto.createHash('md5').update(pathPathForHash).digest('base64url')
 
-        return ['pijama-', hash, name].join('--')
+        return ['pijama', hash, name].join('--')
       },
       getJSON(_, json) {
         tokens = { ...json }
@@ -71,15 +73,9 @@ const onCssModuleResolve = (build, options) => async (args) => {
 }
 
 const setup = async (build, options) => {
-  build.onResolve(
-    { filter: CSS_MODULE_REGEXP, namespace: 'file' },
-    onCssModuleResolve(build, options),
-  )
+  build.onResolve({ filter: CSS_MODULE_REGEXP, namespace: 'file' }, onCssModuleResolve(build, options))
 
-  build.onLoad(
-    { filter: CSS_MODULE_JS_REGEXP, namespace: PLUGIN_NAMESPACE },
-    onCssModuleLoad(build),
-  )
+  build.onLoad({ filter: CSS_MODULE_JS_REGEXP, namespace: PLUGIN_NAMESPACE }, onCssModuleLoad(build))
 }
 
 const scssModulesPlugin = (options = {}) => {

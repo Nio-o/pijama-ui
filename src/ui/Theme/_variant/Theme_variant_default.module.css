@@ -1,4 +1,56 @@
+/* stylelint-disable-next-line CssSyntaxError */
+
 .Theme_variant_default {
-  --color-base: #fff;
-  --button-text-color: var(--color-base);
+  /** Common level variables */
+  --qw-typo-font-family: 'Museo Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+
+  /** Brand level variables */
+
+  /** Colors */
+  --qw-color-base: #ffffff;
+  --qw-color-brand: #ff8c00;
+  --qw-color-secondary: #060505;
+  --qw-color-surface: #f5f5f5;
+
+  /** Typo body L */
+  --qw-typo-body-l-normal-font-family: var(--qw-typo-font-family);
+  --qw-typo-body-l-normal-font-size: 20px;
+  --qw-typo-body-l-normal-font-weight: 500;
+  --qw-typo-body-l-normal-line-height: 32px;
+
+  /** Component-specific level */
+
+  /** Button_variant_brand */
+  --qw-button-variant-brand-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  --qw-button-variant-brand-background: var(--qw-color-brand);
+  --qw-button-variant-brand-background--disabled: #e6e6e6;
+  --qw-button-variant-brand-background--hovered: #ff8200;
+  --qw-button-variant-brand-border-radius: 30px;
+  --qw-button-variant-brand-font-size: 20px;
+  --qw-button-variant-brand-font-family: var(--qw-typo-font-family);
+  --qw-button-variant-brand-text-color: var(--qw-color-base);
+  --qw-button-variant-brand-text-color--hovered: rgb(255 255 255 / 90%);
+  --qw-button-variant-brand-text-color--disabled: #999999;
+
+  /** Button_variant_brand Button_size_l */
+  --qw-button-variant-brand-size-l-background: linear-gradient(rgb(255 152 16), rgb(255 131 0));
+  --qw-button-variant-brand-size-l-box-shadow: rgb(255 206 135) 0 15px 50px -10px;
+  --qw-button-variant-brand-size-l-box-shadow--disabled: rgb(255 206 135) 0 0 0;
+  --qw-button-variant-brand-size-l-box-shadow--hovered: rgb(255 206 135) 0 25px 50px -10px;
+
+  /** Button_size_l */
+  --qw-button-size-l-min-width: 200px;
+  --qw-button-size-l-line-height: 60px;
+  --qw-button-size-l-padding: 0 36px;
+
+  /** Button_size_m */
+  --qw-button-size-m-min-width: 148px;
+  --qw-button-size-m-line-height: 48px;
+  --qw-button-size-m-padding: 0 32px;
+
+  /** Button_size_s */
+  --qw-button-size-s-min-width: 100px;
+  --qw-button-size-s-line-height: 40px;
+  --qw-button-size-s-padding: 0 28px;
 }
