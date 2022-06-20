@@ -8,8 +8,10 @@ const target = 'es6'
 const format = 'esm'
 const outDir = './'
 
-const getEntryPoints = () =>
-  [...glob.sync('./src/**/!(*.stories|*.spec).(js|ts)(x)?'), ...glob.sync('./src/**/*.module.css')].sort()
+const getEntryPoints = async () => {
+  const entryPoints = await Promise.all([glob('./src/**/!(*.stories|*.spec).(js|ts)(x)?'), glob('src/**/*.module.css')])
+  return entryPoints.reduce((acc, list) => [...acc, ...list], []).sort()
+}
 
 const watch = process.argv.includes('--watch')
 
@@ -32,14 +34,19 @@ const build = async (entryPoints) => {
 }
 
 const startBuild = async () => {
-  const entryPoints = getEntryPoints()
+  const entryPoints = await getEntryPoints()
 
   const result = await build(entryPoints)
 
   if (!watch) return
 
-  const intervalId = setInterval(() => {
-    const newEntryPoints = getEntryPoints()
+  let lock = false
+  const intervalId = setInterval(async () => {
+    if (lock) return
+    lock = true
+
+    const newEntryPoints = await getEntryPoints()
+    lock = false
 
     let isEntryPointsChanged = false
     if (newEntryPoints.length !== entryPoints.length) {
