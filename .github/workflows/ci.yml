@@ -43,30 +43,62 @@ jobs:
       - name: Test
         run: yarn run test
 
-  # chromatic:
-  #   name: Chromatic
-  #   runs-on: ubuntu-20.04
+  build:
+    name: Build UI
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #       with:
-  #         # Chromatic needs the full Git history to keep track of changes in repository
-  #         fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
 
-  #     - name: Setup Node
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 16
-  #         cache: 'yarn'
+      - name: Install dependencies
+        run: yarn
 
-  #     - name: Install dependencies
-  #       run: yarn
+      - name: Build UI
+        run: yarn run build
 
-  #     - name: Build UI
-  #       run: yarn run build
+      - name: Save build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-ui
+          if-no-files-found: error
+          retention-days: 1
+          path: |
+            ui
+            package.json
 
-  #     - name: Publish to Chromatic
-  #       uses: chromaui/action@v1
-  #       with:
-  #         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+  chromatic:
+    name: Chromatic
+    needs: [build, lint, test]
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          # Chromatic needs the full Git history to keep track of changes in repository
+          fetch-depth: 0
+
+      - name: Restore build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-ui
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
