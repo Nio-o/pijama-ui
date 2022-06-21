@@ -1,5 +1,5 @@
-import type { ReactHTML } from 'react'
-import React from 'react'
+import type { ReactHTML, RefObject } from 'react'
+import React, { forwardRef } from 'react'
 
 import { render } from '@testing-library/react'
 
@@ -13,7 +13,7 @@ describe('Components / Text', () => {
   renderAs.forEach((renderAs) => {
     it(`Should render component as "${renderAs}"`, () => {
       const container = render(
-        <Text as={renderAs} testId="test">
+        <Text as={renderAs} data-testid="test">
           text
         </Text>,
       )
@@ -32,7 +32,7 @@ describe('Components / Text', () => {
     it(`Should not pass modifier "${name}" to DOM element`, () => {
       const prop = { [name]: value }
       const container = render(
-        <Text testId="test" {...prop}>
+        <Text data-testid="test" {...prop}>
           text
         </Text>,
       )
@@ -40,7 +40,7 @@ describe('Components / Text', () => {
       expect(container.getByTestId('test')).not.toHaveAttribute(name)
     })
 
-    it(`Should not pass modifier "${name}" to DOM element for custom component`, () => {
+    it(`Should not pass modifier "${name}" to props for custom component`, () => {
       const prop = { [name]: value }
 
       const TestComponent: React.FC = (props) => {
@@ -48,7 +48,7 @@ describe('Components / Text', () => {
       }
 
       const container = render(
-        <Text testId="test" as={TestComponent} {...prop}>
+        <Text data-testid="test" as={TestComponent} {...prop}>
           text
         </Text>,
       )
@@ -58,14 +58,14 @@ describe('Components / Text', () => {
   })
 
   it('Should render as "span" by default', () => {
-    const container = render(<Text testId="test">text</Text>)
+    const container = render(<Text data-testid="test">text</Text>)
     expect(container.getByTestId('test').tagName.toLowerCase()).toEqual('span')
     expect(container.getByTestId('test')).toHaveTextContent('text')
   })
 
   it('Should render as "a" and allow to pass additional props', () => {
     const container = render(
-      <Text as="a" href="my-link" testId="test">
+      <Text as="a" href="my-link" data-testid="test">
         text
       </Text>,
     )
@@ -77,7 +77,7 @@ describe('Components / Text', () => {
 
   it('Should render as "button" and allow to pass additional props', () => {
     const container = render(
-      <Text as="button" disabled testId="test">
+      <Text as="button" disabled data-testid="test">
         text
       </Text>,
     )
@@ -93,7 +93,7 @@ describe('Components / Text', () => {
     }
 
     const container = render(
-      <Text testId="test" as={TestComponent} testProp="testProp">
+      <Text data-testid="test" as={TestComponent} testProp="testProp">
         empty
       </Text>,
     )
@@ -102,5 +102,29 @@ describe('Components / Text', () => {
 
     expect(element).toHaveTextContent('testProp')
     expect(element).not.toHaveTextContent('empty')
+  })
+
+  it('Should attach ref to DOM node', () => {
+    const ref: RefObject<HTMLElement> = { current: null }
+
+    render(
+      <Text data-testid="test" ref={ref}>
+        empty
+      </Text>,
+    )
+
+    expect(ref.current).toBeDefined()
+  })
+
+  it('Should forward ref when custom component specified', () => {
+    const TestComponent = forwardRef<HTMLDivElement>((_, ref) => {
+      return <div ref={ref} />
+    })
+
+    const ref: RefObject<HTMLDivElement> = { current: null }
+
+    render(<Text data-testid="test" as={TestComponent} ref={ref} />)
+
+    expect(ref.current).toBeDefined()
   })
 })
