@@ -43,15 +43,11 @@ describe('Components / Text', () => {
     it(`Should not pass modifier "${name}" to props for custom component`, () => {
       const prop = { [name]: value }
 
-      const TestComponent: React.FC = (props) => {
+      const TestComponent = (props: Record<string, unknown>) => {
         return <div {...props} />
       }
 
-      const container = render(
-        <Text data-testid="test" as={TestComponent} {...prop}>
-          text
-        </Text>,
-      )
+      const container = render(<Text data-testid="test" as={TestComponent} {...prop} />)
 
       expect(container.getByTestId('test')).not.toHaveAttribute(name)
     })
@@ -88,15 +84,14 @@ describe('Components / Text', () => {
   })
 
   it('Should render as custom component and allow to pass additional props', () => {
-    const TestComponent: React.FC<{ testProp: string }> = ({ testProp, children: _, ...rest }) => {
+    const TestComponent = ({
+      testProp,
+      ...rest
+    }: Record<string, unknown> & { testProp: string }): React.ReactElement => {
       return <div {...rest}>{testProp}</div>
     }
 
-    const container = render(
-      <Text data-testid="test" as={TestComponent} testProp="testProp">
-        empty
-      </Text>,
-    )
+    const container = render(<Text data-testid="test" as={TestComponent} testProp="testProp" />)
 
     const element = container.getByTestId('test')
 
