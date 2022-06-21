@@ -10,9 +10,11 @@ import {
   withWeightNormal,
 } from './_weight/Text_weight'
 
-import { enhanceText } from './Text'
+import { enhanceComponent } from '../OverridableComponent/enhanceComponent'
+import { Text as BaseText } from './Text'
 
-export const Text = enhanceText(
+export const Text = enhanceComponent(
+  BaseText,
   compose(
     composeU(withWeightBold, withWeightHeavy, withWeightLight, withWeightMedium, withWeightNormal),
     withTypo,
