@@ -12,6 +12,9 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  typescript: {
+    check: true,
+  },
   features: {
     storyStoreV7: true,
   },
