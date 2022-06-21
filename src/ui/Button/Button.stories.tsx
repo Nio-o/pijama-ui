@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Button>
 
 export const Playground: ComponentStory<typeof Button> = () => {
-  return <Button>Button</Button>
+  return <Button variant="brand">Button</Button>
 }
 
 export const BrandButton: ComponentStory<typeof Button> = () => {

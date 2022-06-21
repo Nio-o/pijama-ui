@@ -12,15 +12,49 @@
   --qw-color-secondary: #060505;
   --qw-color-surface: #f5f5f5;
 
-  /** Typo body L */
-  --qw-typo-body-l-normal-font-family: var(--qw-typo-font-family);
-  --qw-typo-body-l-normal-font-size: 20px;
-  --qw-typo-body-l-normal-font-weight: 500;
-  --qw-typo-body-l-normal-line-height: 32px;
-
   /** Component-specific level */
 
-  /** Button_variant_brand */
+  --qw-text-weight-light-font-weight: 300;
+  --qw-text-weight-normal-font-weight: 400;
+  --qw-text-weight-medium-font-weight: 500;
+  --qw-text-weight-bold-font-weight: 700;
+  --qw-text-weight-heavy-font-weight: 900;
+
+  /** Text */
+
+  /** Text_typo */
+  --qw-typo-h1-font-size: 32px;
+  --qw-typo-h1-line-hegiht: 36px;
+  --qw-typo-h1-font-family: var(--qw-typo-font-family);
+  --qw-typo-h2-font-size: 28px;
+  --qw-typo-h2-line-hegiht: 32px;
+  --qw-typo-h2-font-family: var(--qw-typo-font-family);
+  --qw-typo-h3-font-size: 24px;
+  --qw-typo-h3-line-hegiht: 28px;
+  --qw-typo-h3-font-family: var(--qw-typo-font-family);
+  --qw-typo-h4-font-size: 20px;
+  --qw-typo-h4-line-hegiht: 24px;
+  --qw-typo-h4-font-family: var(--qw-typo-font-family);
+  --qw-typo-l-font-size: 20px;
+  --qw-typo-l-line-hegiht: 32px;
+  --qw-typo-l-font-family: var(--qw-typo-font-family);
+  --qw-typo-l-compact-font-size: 20px;
+  --qw-typo-l-compact-line-hegiht: 28px;
+  --qw-typo-l-compact-font-family: var(--qw-typo-font-family);
+  --qw-typo-m-font-size: 16px;
+  --qw-typo-m-line-hegiht: 24px;
+  --qw-typo-m-font-family: var(--qw-typo-font-family);
+  --qw-typo-m-compact-font-size: 16px;
+  --qw-typo-m-compact-line-hegiht: 20px;
+  --qw-typo-m-compact-font-family: var(--qw-typo-font-family);
+  --qw-typo-s-font-size: 14px;
+  --qw-typo-s-line-hegiht: 20px;
+  --qw-typo-s-font-family: var(--qw-typo-font-family);
+  --qw-typo-s-compact-font-size: 16px;
+  --qw-typo-s-compact-line-hegiht: 16px;
+  --qw-typo-s-compact-font-family: var(--qw-typo-font-family);
+
+  /** Button */
   --qw-button-variant-brand-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s,
     background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   --qw-button-variant-brand-background: var(--qw-color-brand);

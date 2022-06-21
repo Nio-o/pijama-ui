@@ -1,0 +1,19 @@
+.Text {
+  &.Text_align {
+    &_start {
+      text-align: left;
+    }
+
+    &_center {
+      text-align: center;
+    }
+
+    &_end {
+      text-align: end;
+    }
+
+    &_justify {
+      text-align: justify;
+    }
+  }
+}
