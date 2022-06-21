@@ -72,6 +72,32 @@ jobs:
             ui
             package.json
 
+  bundles:
+    name: Compile bundles
+    needs: build
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Restore build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-ui
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Compline bundles
+        run: yarn run bundle
+
   chromatic:
     name: Chromatic
     needs: [build, lint, test]
