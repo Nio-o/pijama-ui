@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "clear": "rimraf ./ui",
+    "bundle": "node ./infra/bundles.js",
     "build-storybook": "build-storybook",
     "build": "yarn run clear && concurrently \"yarn:build:*\" -g",
     "build:kit": "node ./infra/esbuild.js",
