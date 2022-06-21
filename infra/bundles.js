@@ -4,7 +4,7 @@ const esbuild = require('esbuild')
 const glob = require('fast-glob')
 const cssModulesPlugin = require('./esbuild-css-modules')
 
-const target = 'es6'
+const target = 'es2020'
 const format = 'esm'
 
 const bundles = glob.sync('./ui/**/bundle.js')
@@ -16,7 +16,7 @@ const startBundlesBuild = async () => {
     logLevel: 'info',
     write: false,
     outdir: './bundles',
-    outbase: './src',
+    outbase: './',
     bundle: true,
     minify: true,
     platform: 'node',
