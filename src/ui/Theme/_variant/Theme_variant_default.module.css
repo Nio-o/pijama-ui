@@ -87,4 +87,9 @@
   --qw-button-size-s-min-width: 100px;
   --qw-button-size-s-line-height: 40px;
   --qw-button-size-s-padding: 0 28px;
+
+  /** Divider */
+  --qw-divider-border-width: 0 0 1px;
+  --qw-divider-border-style: solid;
+  --qw-divider-border-color: #e6e6e6;
 }
