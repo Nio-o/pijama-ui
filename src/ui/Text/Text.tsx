@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import type { ComponentType, ElementType, ReactElement } from 'react'
 import React from 'react'
 
@@ -19,7 +20,7 @@ export type TextOwnProps<T extends TextElementType> = {
 export type TextProps<T extends TextElementType> = TextOwnProps<T> &
   Omit<React.ComponentPropsWithoutRef<T>, keyof TextOwnProps<T>>
 
-export type TextType<P = Record<string, unknown>> = {
+export type TextType<P = {}> = {
   <T extends TextElementType>(props: TextProps<T> & P): ReactElement | null
 }
 
@@ -35,7 +36,7 @@ export const Text = <T extends TextElementType = 'span'>({
   return <Component className={cnText(null, [className])} data-testid={testId} {...props} />
 }
 
-export function enhanceText<H extends Composition<any>, P = Record<string, unknown>>(
+export function enhanceText<H extends Composition<any>, P = {}>(
   hoc: H,
   Comp?: TextType<P>,
 ): TextType<P & (H extends Composition<infer T> ? T : never)> {
