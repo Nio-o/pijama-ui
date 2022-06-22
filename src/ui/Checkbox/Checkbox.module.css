@@ -1,0 +1,65 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-family: var(--qw-button-variant-brand-font-family);
+
+  & input {
+    display: none;
+  }
+
+  .checkmark {
+    position: relative;
+    display: block;
+    width: var(--qw-checkmark-width);
+    min-width: var(--qw-checkmark-width);
+    height: var(--qw-checkmark-height);
+    min-height: var(--qw-checkmark-height);
+    margin: 6px 12px 6px 6px;
+    border: var(--qw-checkmark-border) solid var(--qw-checkmark-border-color);
+    border-radius: var(--qw-checkmark-radius);
+    background-color: var(--qw-checkmark-background-color);
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: var(--qw-position-top);
+      left: var(--qw-position-left);
+      display: none;
+      width: var(--qw-mark-width);
+      height: var(--qw-mark-height);
+      border: solid var(--qw-color-mark);
+      border-width: var(--qw-mark-border-width);
+      transform: rotate(45deg);
+    }
+  }
+
+  &:hover {
+    .checkmark {
+      border-color: var(--qw-color-brand);
+    }
+  }
+
+  & input:checked + .checkmark {
+    border-color: var(--qw-color-brand);
+    background-color: var(--qw-checkmark-background-color-active);
+
+    &::after {
+      display: block;
+    }
+  }
+
+  & input:disabled + .checkmark {
+    border-color: var(--qw-checkmark-border-color);
+    background-color: var(--qw-color-disabled);
+    cursor: not-allowed;
+
+    &::after {
+      border-color: var(--qw-color-mark-disabled);
+    }
+  }
+
+  & input[aria-error='true'] + .checkmark {
+    border-color: var(--qw-color-error);
+  }
+}
