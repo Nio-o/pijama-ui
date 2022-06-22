@@ -14,7 +14,7 @@ const PLUGIN_NAME = 'pijama-css-modules'
 const PLUGIN_NAMESPACE = PLUGIN_NAME
 
 const CWD = process.cwd()
-const MIXINS_DIR = path.resolve(__dirname, '../src/**/*.mixin.css')
+const MIXINS_PATTERN = path.resolve(__dirname, '../src/**/*.mixins.css')
 
 const onCssModuleLoad = (_build, _options) => async (args) => {
   const relativeCssPath = './' + path.basename(args.pluginData.cssOutPath)
@@ -29,7 +29,7 @@ const onCssModuleResolve = (build, options) => async (args) => {
   let tokens = {}
   const processor = postcss([
     postcssNested(),
-    postcssMixins({ mixinsDir: MIXINS_DIR }),
+    postcssMixins({ mixinsFiles: MIXINS_PATTERN }),
     cssModules({
       ...options.cssModules,
       generateScopedName: function (name, _filename, _css) {

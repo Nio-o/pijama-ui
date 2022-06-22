@@ -1,0 +1,5 @@
+@define-mixin divider-theme-default {
+  --qw-divider-border-width: 0 0 1px;
+  --qw-divider-border-style: solid;
+  --qw-divider-border-color: #e6e6e6;
+}
