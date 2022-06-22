@@ -1,7 +1,27 @@
 .Checkbox {
-  background-color: bisque;
-}
+  display: block;
 
-.Checkmark {
-  background-color: aqua;
+  .Checkmark {
+    display: block;
+    width: var(--qw-checkmark-width);
+    height: var(--qw-checkmark-height);
+    border: var(--qw-checkmark-border) solid var(--qw-checkmark-border-color);
+    border-radius: var(--qw-checkmark-radius);
+    background-color: var(--qw-checkmark-background-color);
+  }
+
+  &:hover {
+    .Checkmark {
+      border-color: var(--qw-color-brand);
+    }
+  }
+
+  & input {
+    display: none;
+  }
+
+  & input:checked + .Checkmark {
+    border-color: var(--qw-color-brand);
+    background-color: var(--qw-checkmark-background-color-active);
+  }
 }

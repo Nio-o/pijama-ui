@@ -7,19 +7,20 @@ import type { CommonPijamaProps } from '../OverridableComponent/OverridableCompo
 import s from './Checkbox.module.js'
 
 export interface CheckboxProps extends CommonPijamaProps {
-  className?: string
+  children?: React.ReactNode
   checked?: boolean
-  text?: string
+  disabled?: boolean
+  error?: boolean
 }
 
 const cnCheckbox = cn(s.Checkbox)
 
-export const Checkbox = ({ text, className, checked = false }: CheckboxProps): JSX.Element => {
+export const Checkbox = ({ children, className, checked = false, disabled = false }: CheckboxProps): JSX.Element => {
   return (
     <label className={cnCheckbox(undefined, [className])}>
-      <input type="checkbox" checked={checked} />
+      <input type="checkbox" checked={checked} disabled={disabled} />
       <span className={s.Checkmark} />
-      <p>{text}</p>
+      {children}
     </label>
   )
 }

@@ -10,11 +10,12 @@ export default {
 } as ComponentMeta<typeof Checkbox>
 
 export const BrandCheckbox: ComponentStory<typeof Checkbox> = () => {
-  const textStub = 'Продать алюминий'
   return (
     <div style={{ display: 'flex', alignItems: 'center', columnGap: '16px' }}>
-      <Checkbox text={textStub} variant="brand" />
-      <Checkbox text={textStub} checked variant="brand" />
+      <Checkbox />
+      <Checkbox checked />
+      <Checkbox checked disabled />
+      <Checkbox error />
     </div>
   )
 }

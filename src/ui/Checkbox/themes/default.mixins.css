@@ -1,0 +1,13 @@
+@define-mixin checkbox-theme-default {
+  /** Checkmark Colors */
+  --qw-color-disabled: #e6e6e6;
+
+  /** Checkmark */
+  --qw-checkmark-width: 16px;
+  --qw-checkmark-height: 16px;
+  --qw-checkmark-background-color: var(--qw-color-disabled);
+  --qw-checkmark-background-color-active: var(--qw-color-disabled);
+  --qw-checkmark-border: 2px;
+  --qw-checkmark-border-color: var(--qw-color-disabled);
+  --qw-checkmark-radius: 3px;
+}
