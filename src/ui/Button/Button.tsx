@@ -19,10 +19,12 @@ export const Button = ({
   children,
   className,
   disabled = false,
+  style,
 }: ButtonProps): JSX.Element => {
   return (
     <AsComponent
       aria-disabled={disabled}
+      style={style}
       disabled={AsComponent === 'button' ? disabled : undefined}
       className={cnButton(undefined, [className])}
     >
