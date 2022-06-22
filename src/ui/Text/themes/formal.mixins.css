@@ -1,0 +1,7 @@
+@define-mixin text-theme-formal {
+  /** Typo body L */
+  --qw-typo-body-l-normal-font-family: var(--qw-typo-font-family);
+  --qw-typo-body-l-normal-font-size: 20px;
+  --qw-typo-body-l-normal-font-weight: 500;
+  --qw-typo-body-l-normal-line-height: 32px;
+}
