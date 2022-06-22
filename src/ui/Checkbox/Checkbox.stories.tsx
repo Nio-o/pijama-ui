@@ -12,11 +12,13 @@ export default {
 export const BrandCheckbox: ComponentStory<typeof Checkbox> = () => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', columnGap: '16px' }}>
-      <Checkbox text="Хотите продать Алюминий?" />
-      <Checkbox text="Продать Алюминий" checked />
-      <Checkbox text="Невозвожно продать Алюминий" disabled />
-      <Checkbox text="Точно продать Алюминий" checked disabled />
-      <Checkbox text="Вы не уйдёте пока не продадите Алюминий" error />
+      <Checkbox>Хотите продать Алюминий?</Checkbox>
+      <Checkbox checked>Продать Алюминий</Checkbox>
+      <Checkbox disabled>Невозвожно продать Алюминий</Checkbox>
+      <Checkbox checked disabled>
+        Точно продать Алюминий
+      </Checkbox>
+      <Checkbox error>Вы не уйдёте пока не продадите Алюминий</Checkbox>
     </div>
   )
 }

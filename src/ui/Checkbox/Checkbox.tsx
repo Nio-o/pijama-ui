@@ -13,7 +13,6 @@ export interface CheckboxProps extends CommonPijamaProps {
   error?: boolean
   testId?: string
   name?: string
-  text?: string
 }
 
 const cnCheckbox = cn(s.checkbox)
@@ -22,7 +21,6 @@ export const Checkbox = ({
   children,
   className,
   name,
-  text,
   testId,
   checked = false,
   disabled = false,
@@ -32,7 +30,7 @@ export const Checkbox = ({
     <label className={cnCheckbox(undefined, [className])} data-test-id={testId}>
       <input type="checkbox" checked={checked} disabled={disabled} aria-error={error} name={name} />
       <span className={s.checkmark} />
-      {children && !text ? children : text}
+      {children}
     </label>
   )
 }
