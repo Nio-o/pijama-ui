@@ -1,0 +1,23 @@
+@define-mixin checkbox-theme-formal {
+  /** Checkmark Colors */
+  --qw-color-disabled: #d9d9d9;
+  --qw-color-mark: white;
+  --qw-color-error: #ea3737;
+  --qw-color-mark-disabled: #cccccc;
+
+  /** Checkmark proportions */
+  --qw-mark-width: 6px;
+  --qw-mark-height: 12px;
+  --qw-mark-border-width: 0 3px 3px 0;
+  --qw-position-top: 1px;
+  --qw-position-left: 7px;
+
+  /** Checkmark */
+  --qw-checkmark-width: 23px;
+  --qw-checkmark-height: 23px;
+  --qw-checkmark-background-color: var(--qw-color-base);
+  --qw-checkmark-background-color-active: #ff6f00;
+  --qw-checkmark-border: 1px;
+  --qw-checkmark-border-color: #7e7f85;
+  --qw-checkmark-radius: 5px;
+}
