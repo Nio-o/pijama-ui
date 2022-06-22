@@ -11,16 +11,28 @@ export interface CheckboxProps extends CommonPijamaProps {
   checked?: boolean
   disabled?: boolean
   error?: boolean
+  testId?: string
+  name?: string
+  text?: string
 }
 
-const cnCheckbox = cn(s.Checkbox)
+const cnCheckbox = cn(s.checkbox)
 
-export const Checkbox = ({ children, className, checked = false, disabled = false }: CheckboxProps): JSX.Element => {
+export const Checkbox = ({
+  children,
+  className,
+  name,
+  text,
+  testId,
+  checked = false,
+  disabled = false,
+  error = false,
+}: CheckboxProps): JSX.Element => {
   return (
-    <label className={cnCheckbox(undefined, [className])}>
-      <input type="checkbox" checked={checked} disabled={disabled} />
-      <span className={s.Checkmark} />
-      {children}
+    <label className={cnCheckbox(undefined, [className])} data-test-id={testId}>
+      <input type="checkbox" checked={checked} disabled={disabled} aria-error={error} name={name} />
+      <span className={s.checkmark} />
+      {children && !text ? children : text}
     </label>
   )
 }
