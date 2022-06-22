@@ -27,4 +27,6 @@
   @mixin text-theme-default;
   @mixin button-theme-default;
   @mixin divider-theme-default;
+  @mixin grid-theme-default;
+  @mixin grid-item-theme-default;
 }
