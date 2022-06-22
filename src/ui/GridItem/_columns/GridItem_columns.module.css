@@ -1,0 +1,47 @@
+.GridItem.GridItem_columns_1 {
+  grid-area: auto / auto / auto / span 1;
+}
+
+.GridItem.GridItem_columns_2 {
+  grid-area: auto / auto / auto / span 2;
+}
+
+.GridItem.GridItem_columns_3 {
+  grid-area: auto / auto / auto / span 3;
+}
+
+.GridItem.GridItem_columns_4 {
+  grid-area: auto / auto / auto / span 4;
+}
+
+.GridItem.GridItem_columns_5 {
+  grid-area: auto / auto / auto / span 5;
+}
+
+.GridItem.GridItem_columns_6 {
+  grid-area: auto / auto / auto / span 6;
+}
+
+.GridItem.GridItem_columns_7 {
+  grid-area: auto / auto / auto / span 7;
+}
+
+.GridItem.GridItem_columns_8 {
+  grid-area: auto / auto / auto / span 8;
+}
+
+.GridItem.GridItem_columns_9 {
+  grid-area: auto / auto / auto / span 9;
+}
+
+.GridItem.GridItem_columns_10 {
+  grid-area: auto / auto / auto / span 10;
+}
+
+.GridItem.GridItem_columns_11 {
+  grid-area: auto / auto / auto / span 11;
+}
+
+.GridItem.GridItem_columns_12 {
+  grid-area: auto / auto / auto / span 12;
+}
