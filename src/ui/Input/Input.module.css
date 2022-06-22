@@ -1,0 +1,88 @@
+.Input {
+  position: relative;
+  display: inline-block;
+  font-family: var(--qw-input-font-family);
+  cursor: text;
+
+  .Control {
+    display: inline-block;
+    box-sizing: border-box;
+    height: var(--qw-input-control-height);
+    padding: var(--qw-input-control-padding);
+    border-top: var(--qw-input-control-border-top, none);
+    border-right: var(--qw-input-control-border-right, none);
+    border-bottom: var(--qw-input-control-border-bottom, none);
+    border-left: var(--qw-input-control-border-left, none);
+    border-radius: var(--qw-input-control-border-radius);
+    background-color: transparent;
+    background-image: none;
+    color: var(--qw-input-control-color);
+    box-shadow: none;
+    font-weight: var(--qw-input-control-font-weight);
+    font-size: var(--qw-input-control-font-size);
+    font-family: var(--qw-input-font-family);
+    line-height: var(--qw-input-control-line-height);
+  }
+
+  .Hint {
+    color: var(--qw-input-hint-color);
+    font-weight: var(--qw-input-hint-font-weight);
+    font-size: var(--qw-input-hint-font-size);
+  }
+
+  &_focused,
+  &:hover {
+    .Control {
+      border-top: var(--qw-input-control-border-top-hovered);
+      border-right: var(--qw-input-control-border-right-hovered);
+      border-bottom: var(--qw-input-control-border-bottom-hovered);
+      border-left: var(--qw-input-control-border-left-hovered);
+    }
+  }
+
+  &_state_error {
+    .Control[class] {
+      border-top: var(--qw-input-control-state-error-border-top, none);
+      border-right: var(--qw-input-control-state-error-border-right, none);
+      border-bottom: var(--qw-input-control-state-error-border-bottom, none);
+      border-left: var(--qw-input-control-state-error-border-left, none);
+    }
+
+    .Hint {
+      color: var(--qw-input-hint-state-error-color, none);
+    }
+  }
+
+  .Control:focus {
+    outline: none;
+  }
+
+  .Title {
+    position: absolute;
+    top: var(--qw-input-title-top);
+    left: var(--qw-input-title-left);
+    color: var(--qw-input-title-color);
+    font-weight: var(--qw-input-title-font-weight);
+    font-size: var(--qw-input-title-font-size);
+    line-height: var(--qw-input-title-line-height);
+    pointer-events: none;
+    user-select: none;
+    transition: all 0.1s ease;
+  }
+
+  .BottomBar {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--qw-input-bottom-bar-margin);
+    line-height: var(--qw-input-bottom-bar-line-height);
+  }
+
+  &_focused,
+  &_filled {
+    .Title {
+      top: var(--qw-input-title-top-focused);
+      font-size: var(--qw-input-focused-title-font-size);
+      line-height: var(--qw-input-focused-title-line-height);
+    }
+  }
+}
