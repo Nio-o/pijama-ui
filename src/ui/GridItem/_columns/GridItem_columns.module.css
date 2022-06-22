@@ -1,0 +1,51 @@
+.GridItem {
+  &.GridItem_columns {
+    &_1 {
+      grid-area: var(--qw-grid-grid-area-columns-1);
+    }
+
+    &_2 {
+      grid-area: var(--qw-grid-grid-area-columns-2);
+    }
+
+    &_3 {
+      grid-area: var(--qw-grid-grid-area-columns-3);
+    }
+
+    &_4 {
+      grid-area: var(--qw-grid-grid-area-columns-4);
+    }
+
+    &_5 {
+      grid-area: var(--qw-grid-grid-area-columns-5);
+    }
+
+    &_6 {
+      grid-area: var(--qw-grid-grid-area-columns-6);
+    }
+
+    &_7 {
+      grid-area: var(--qw-grid-grid-area-columns-7);
+    }
+
+    &_8 {
+      grid-area: var(--qw-grid-grid-area-columns-8);
+    }
+
+    &_9 {
+      grid-area: var(--qw-grid-grid-area-columns-9);
+    }
+
+    &_10 {
+      grid-area: var(--qw-grid-grid-area-columns-10);
+    }
+
+    &_11 {
+      grid-area: var(--qw-grid-grid-area-columns-11);
+    }
+
+    &_12 {
+      grid-area: var(--qw-grid-grid-area-columns-12);
+    }
+  }
+}

@@ -14,4 +14,6 @@
 
   @mixin text-theme-formal;
   @mixin button-theme-formal;
+  @mixin grid-theme-formal;
+  @mixin grid-item-theme-formal;
 }
