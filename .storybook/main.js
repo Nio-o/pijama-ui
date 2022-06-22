@@ -13,7 +13,7 @@ module.exports = {
     builder: 'webpack5',
   },
   typescript: {
-    check: true,
+    check: false,
   },
   features: {
     storyStoreV7: true,
