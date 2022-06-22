@@ -1,0 +1,7 @@
+@define-mixin grid-theme-default {
+  --qw-grid-display: grid;
+  --qw-grid-grid-template-columns: repeat(12, minmax(auto, 80px));
+  --qw-grid-grid-gap: 20px;
+  --qw-grid-max-width: 1180px;
+  --qw-grid-margin: 0 auto;
+}
