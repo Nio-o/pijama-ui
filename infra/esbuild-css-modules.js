@@ -7,6 +7,7 @@ const cssModules = require('postcss-modules')
 const crypto = require('node:crypto')
 const postcssNested = require('postcss-nested')
 const postcssMixins = require('postcss-mixins')
+const glob = require('fast-glob')
 
 const CSS_MODULE_REGEXP = /\.module\.css$/i
 const CSS_MODULE_JS_REGEXP = /\.module\.css\.js$/i
@@ -63,7 +64,7 @@ const onCssModuleResolve = (build, options) => async (args) => {
   return {
     namespace: PLUGIN_NAMESPACE,
     path: cssOutPath.replace(/\.css$/, '.module.css.js'),
-    watchFiles: [sourceFullPath],
+    watchFiles: [sourceFullPath, ...(await glob(MIXINS_PATTERN))],
     pluginData: {
       sourceFullPath,
       cssOutPath,
