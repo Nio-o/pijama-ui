@@ -2,31 +2,14 @@ import React from 'react'
 
 import { cn } from '@bem-react/classname'
 
+import type { CommonPijamaProps } from '../OverridableComponent/OverridableComponent'
+
 import s from './Button.module.js'
 
-export interface ButtonProps {
-  className?: string
+export interface ButtonProps extends CommonPijamaProps {
   children?: React.ReactNode
-  /**
-   * @default 'button'
-   */
   as?: keyof React.ReactHTML
-
-  /**
-   *
-   * test
-   *
-   * @default false
-   */
   disabled?: boolean
-
-  /**
-   *
-   * test
-   *
-   * @default false
-   */
-  variant: unknown
 }
 
 const cnButton = cn(s.Button)

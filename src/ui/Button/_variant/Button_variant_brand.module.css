@@ -2,7 +2,6 @@
   border-radius: var(--qw-button-variant-brand-border-radius);
   background: var(--qw-button-variant-brand-background);
   color: var(--qw-button-variant-brand-text-color);
-  font-size: var(--qw-button-variant-brand-font-size);
   font-family: var(--qw-button-variant-brand-font-family);
   transition: var(--qw-button-variant-brand-transition);
 
