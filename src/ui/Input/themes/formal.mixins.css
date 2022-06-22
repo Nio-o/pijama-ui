@@ -1,0 +1,37 @@
+@define-mixin input-theme-formal {
+  --qw-input-font-family: var(--qw-typo-font-family);
+  --qw-input-control-padding: 13px 16px 1px;
+  --qw-input-control-height: 42px;
+  --qw-input-control-state-error-border-bottom: 1px solid var(--qw-color-error);
+  --qw-input-control-state-error-border-top: 1px solid var(--qw-color-error);
+  --qw-input-control-state-error-border-left: 1px solid var(--qw-color-error);
+  --qw-input-control-state-error-border-right: 1px solid var(--qw-color-error);
+  --qw-input-control-border-top: 1px solid #7e7f85;
+  --qw-input-control-border-right: 1px solid #7e7f85;
+  --qw-input-control-border-left: 1px solid #7e7f85;
+  --qw-input-control-border-bottom: 1px solid #7e7f85;
+  --qw-input-control-border-radius: 10px;
+  --qw-input-control-font-size: 14px;
+  --qw-input-control-font-weight: 400;
+  --qw-input-control-line-height: 26px;
+  --qw-input-control-color: #272a35;
+  --qw-input-title-top: 12px;
+  --qw-input-title-left: 17px;
+  --qw-input-title-font-size: 14px;
+  --qw-input-title-line-height: 18px;
+  --qw-input-title-font-weight: 300;
+  --qw-input-title-color: #7e7f85;
+  --qw-input-title-top-focused: 4px;
+  --qw-input-focused-title-font-size: 10px;
+  --qw-input-focused-title-line-height: 12px;
+  --qw-input-bottom-bar-margin: 2px 0 0 0;
+  --qw-input-bottom-bar-line-height: 12px;
+  --qw-input-control-border-top-hovered: 1px solid var(--qw-color-brand);
+  --qw-input-control-border-right-hovered: 1px solid var(--qw-color-brand);
+  --qw-input-control-border-left-hovered: 1px solid var(--qw-color-brand);
+  --qw-input-control-border-bottom-hovered: 1px solid var(--qw-color-brand);
+  --qw-input-hint-state-error-color: var(--qw-color-error);
+  --qw-input-hint-font-size: 10px;
+  --qw-input-hint-font-weight: 300px;
+  --qw-input-hint-color: #7e7f85;
+}

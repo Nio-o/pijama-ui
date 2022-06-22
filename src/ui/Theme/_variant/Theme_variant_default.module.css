@@ -11,6 +11,7 @@
   --qw-color-brand: #ff8c00;
   --qw-color-secondary: #060505;
   --qw-color-surface: #f5f5f5;
+  --qw-color-error: #d0021b;
 
   /** Component-specific level */
 
@@ -29,4 +30,5 @@
   @mixin divider-theme-default;
   @mixin grid-theme-default;
   @mixin grid-item-theme-default;
+  @mixin input-theme-default;
 }
