@@ -11,7 +11,9 @@
     position: relative;
     display: block;
     width: var(--qw-checkmark-width);
+    min-width: var(--qw-checkmark-width);
     height: var(--qw-checkmark-height);
+    min-height: var(--qw-checkmark-height);
     margin: 6px 12px 6px 6px;
     border: var(--qw-checkmark-border) solid var(--qw-checkmark-border-color);
     border-radius: var(--qw-checkmark-radius);
