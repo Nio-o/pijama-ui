@@ -9,6 +9,7 @@
   --qw-color-brand: #ff6f00;
   --qw-color-secondary: #272a35;
   --qw-color-surface: red;
+  --qw-color-error: #ea3737;
 
   /** Component-specific level */
 
@@ -16,4 +17,5 @@
   @mixin button-theme-formal;
   @mixin grid-theme-formal;
   @mixin grid-item-theme-formal;
+  @mixin input-theme-formal;
 }
