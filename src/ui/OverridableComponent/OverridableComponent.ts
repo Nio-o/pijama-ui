@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type React from 'react'
-
-interface OverridableTypeMap {
-  props: {}
-  defaultComponent: React.ElementType
-}
+import type { PropsWithoutRef, RefAttributes } from 'react'
 
 export interface CommonPijamaProps {
   className?: string
@@ -12,33 +8,43 @@ export interface CommonPijamaProps {
 }
 
 // prettier-ignore
-type BaseProps<M extends OverridableTypeMap> =
-  & M['props']
+type BaseProps<P extends {}> =
+  & P
   & CommonPijamaProps;
 
 // prettier-ignore
 type OverrideProps<
-  M extends OverridableTypeMap,
-  C extends React.ElementType
+  P extends {},
+  E extends React.ElementType
 > = (
-  & BaseProps<M>
-  & Omit<React.ComponentPropsWithoutRef<C>, keyof BaseProps<M>>
-  & { ref?: React.Ref<React.ElementRef<C>> }
+  & BaseProps<P>
+  & Omit<React.ComponentPropsWithoutRef<E>, keyof BaseProps<P>>
 );
 
-export interface PijamaComponent<P extends {} = {}> {
-  (props: P & CommonPijamaProps): JSX.Element | null
+export interface PijamaComponent<T, P extends {} = {}> {
+  (props: BaseProps<P>, ref?: React.ForwardedRef<T>): JSX.Element | null
 }
 
-export interface PijamaComponentWithRef<T, P extends {} = {}> {
-  (props: P & CommonPijamaProps, ref?: React.ForwardedRef<T>): JSX.Element | null
+export interface PijamaForwardRefComponent<T, P extends {} = {}> {
+  (props: PropsWithoutRef<BaseProps<P>> & RefAttributes<T>): JSX.Element | null
 }
 
-export interface OverridableComponent<D extends React.ElementType, P extends {} = {}> {
-  <C extends React.ElementType = D>(
+export interface OverridableComponent<E extends React.ElementType, P extends {} = {}> {
+  <C extends React.ElementType = E>(
     props: {
       as?: C
-    } & OverrideProps<{ props: P; defaultComponent: D }, C>,
+    } & OverrideProps<P, C>,
     ref?: React.ForwardedRef<React.ElementRef<C>>,
+  ): JSX.Element | null
+}
+
+export interface OverridableForwardRefComponent<E extends React.ElementType, P extends {} = {}> {
+  <C extends React.ElementType = E>(
+    props: PropsWithoutRef<
+      {
+        as?: C
+      } & OverrideProps<P, C>
+    > &
+      RefAttributes<React.ElementRef<C>>,
   ): JSX.Element | null
 }
