@@ -1,4 +1,4 @@
-@define-mixin grid-item-theme-default {
+@define-mixin grid-item-theme-formal {
   --qw-grid-grid-area-columns-1: auto / auto / auto / span 1;
   --qw-grid-grid-area-columns-2: auto / auto / auto / span 2;
   --qw-grid-grid-area-columns-3: auto / auto / auto / span 3;

@@ -2,7 +2,7 @@ import React from 'react'
 
 import { cn } from '@bem-react/classname'
 
-import type { CommonPijamaProps } from 'pijama/src/ui/OverridableComponent/OverridableComponent'
+import type { CommonPijamaProps } from '../OverridableComponent/OverridableComponent'
 
 import s from './Grid.module.js'
 
