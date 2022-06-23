@@ -42,7 +42,7 @@
   --qw-button-variant-simple-size-l-box-shadow--hovered: rgb(0 0 0 / 15%) 0 25px 50px -10px;
 
   /** Button_size_l */
-  --qw-button-size-l-min-width: 200px;
+  --qw-button-size-l-min-width: 250px;
   --qw-button-size-l-line-height: 60px;
   --qw-button-size-l-padding: 0 36px;
   --qw-button-size-l-font-size: 20px;
