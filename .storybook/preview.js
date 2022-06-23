@@ -1,3 +1,5 @@
+import '@qiwi/pijma-fonts'
+
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
 import { withThemes } from './decorators/withThemes'
