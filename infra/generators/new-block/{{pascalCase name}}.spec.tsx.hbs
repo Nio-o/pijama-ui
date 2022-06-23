@@ -1,0 +1,28 @@
+import React from 'react'
+
+import { render } from '@testing-library/react'
+
+import { {{pascalCase name}} } from './bundle'
+
+import '@testing-library/jest-dom'
+
+describe('Components / {{pascalCase name}}', () => {
+  it(`Should render component without errors`, () => {
+    expect(() => render(<{{pascalCase name}} />)).not.toThrow()
+  })
+
+  it(`Should pass "style" to DOM node`, () => {
+    const style = { padding: '1px 2px 3px 4px' }
+    const { container } = render(<{{pascalCase name}} style={style} />)
+
+    expect(container.firstChild).toHaveStyle(style)
+  })
+
+  it(`Should pass "className" to DOM node`, () => {
+    const className = 'test-forward-me'
+    const { container } = render(<{{pascalCase name}} className={className} />)
+
+    expect(container.firstChild).toHaveClass(className)
+  })
+})
+
