@@ -1,0 +1,21 @@
+import React from 'react'
+
+import { cn } from '@bem-react/classname'
+
+import type { CommonPijamaProps, WithChildrenProp } from '../OverridableComponent/OverridableComponent.js'
+
+import s from './{{pascalCase name}}.module.js'
+
+export interface {{pascalCase name}}Props extends CommonPijamaProps, WithChildrenProp {
+  /** Your props */
+}
+
+const cn{{pascalCase name}} = cn(s.{{pascalCase name}})
+
+export const {{pascalCase name}} = ({ style, className, children }: {{pascalCase name}}Props): JSX.Element | null => {
+  return (
+    <div className={cn{{pascalCase name}}(null, [className])} style={style}>
+      {children}
+    </div>
+  )
+}
