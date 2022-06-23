@@ -1,0 +1,14 @@
+import React from 'react'
+
+import type { ComponentMeta, ComponentStory } from '@storybook/react'
+
+import { {{pascalCase name}} } from 'pijama/ui/{{pascalCase name}}/bundle'
+
+export default {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+} as ComponentMeta<typeof {{pascalCase name}}>
+
+export const Playground: ComponentStory<typeof {{pascalCase name}}> = (props) => {
+  return <{{pascalCase name}} {...props}>Hello world!</{{pascalCase name}}>
+}
