@@ -32,4 +32,5 @@
   @mixin grid-item-theme-default;
   @mixin input-theme-default;
   @mixin checkbox-theme-default;
+  @mixin radio-button-theme-default;
 }
