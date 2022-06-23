@@ -1658,6 +1658,11 @@
     schema-utils "^3.0.0"
     source-map "^0.7.3"
 
+"@qiwi/pijma-fonts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@qiwi/pijma-fonts/-/pijma-fonts-1.0.0.tgz#aaf5a8d7bca43e20e5773be23a0c44036ab623ca"
+  integrity sha512-g1iqCwI+ijTYvquE9gTBf/Yt/K1aSgQ3m+OwqrMGwN0zTttAERHr5fw3IqiFG8p4h8H60kmhA8Yb0VuyToq1hg==
+
 "@sinclair/typebox@^0.23.3":
   version "0.23.5"
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.23.5.tgz#93f7b9f4e3285a7a9ade7557d9a8d36809cbc47d"
