@@ -5,7 +5,7 @@ import { RadioContext } from './RadioGroupContext'
 
 export type RadioGroupChangeHandler = (option: string) => unknown
 
-interface RadioGroupProps {
+export interface RadioGroupProps {
   name: string
   value: string
   onChange?: RadioGroupChangeHandler
