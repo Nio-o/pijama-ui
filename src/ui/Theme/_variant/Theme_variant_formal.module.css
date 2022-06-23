@@ -19,4 +19,5 @@
   @mixin grid-item-theme-formal;
   @mixin input-theme-formal;
   @mixin checkbox-theme-formal;
+  @mixin radio-button-theme-formal;
 }

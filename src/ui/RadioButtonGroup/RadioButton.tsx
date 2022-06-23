@@ -25,10 +25,10 @@ export const RadioButton = ({ className, children, value, disabled }: RadioButto
   }
 
   return (
-    <label className={cnRadioButton(undefined, [className])}>
+    <label className={cnRadioButton({ disabled }, [className])}>
       <input type="radio" checked={radioContext?.selected === value} disabled={disabled} onChange={onChange} />
-      <span className={s.radioButton} />
-      {children && <div className={s.customData}>{children}</div>}
+      <span className={s.RadioButton} />
+      {children}
     </label>
   )
 }
