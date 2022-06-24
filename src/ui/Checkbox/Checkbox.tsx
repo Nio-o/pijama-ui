@@ -15,7 +15,7 @@ export interface CheckboxProps extends CommonPijamaProps {
   name?: string
 }
 
-const cnCheckbox = cn(s.checkbox)
+const cnCheckbox = cn(s.Checkbox)
 
 export const Checkbox = ({
   children,
@@ -29,7 +29,7 @@ export const Checkbox = ({
   return (
     <label className={cnCheckbox(undefined, [className])} data-test-id={testId}>
       <input type="checkbox" checked={checked} disabled={disabled} aria-error={error} name={name} />
-      <span className={s.checkmark} />
+      <span className={s.Checkmark} />
       {children}
     </label>
   )

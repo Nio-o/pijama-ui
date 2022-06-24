@@ -2,7 +2,14 @@
   "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
   "plugins": ["stylelint-order"],
   "rules": {
-    "selector-class-pattern": null,
+    "selector-class-pattern": [
+      "^([A-Z])([A-Za-z0-9]+)(_?)([a-z0-9-]+)(_[a-z0-9-]+)?$",
+      {
+        "severity": "error",
+        "resolveNestedSelectors": true,
+        "message": "Please use React BEM naming: Block_mod, Block_mod_value"
+      }
+    ],
     "color-hex-length": "long",
     "color-hex-case": "lower",
     "at-rule-no-unknown": null,
