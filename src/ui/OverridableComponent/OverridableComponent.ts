@@ -1,14 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type React from 'react'
-import type { ReactNode } from 'react'
 
 interface OverridableTypeMap {
   props: {}
   defaultComponent: React.ElementType
-}
-
-export interface WithChildrenProp {
-  children?: ReactNode
 }
 
 export interface CommonPijamaProps {
