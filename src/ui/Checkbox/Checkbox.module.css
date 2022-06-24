@@ -1,4 +1,4 @@
-.checkbox {
+.Checkbox {
   display: flex;
   align-items: center;
   font-family: var(--qw-button-variant-brand-font-family);
@@ -7,7 +7,7 @@
     display: none;
   }
 
-  .checkmark {
+  .Checkmark {
     position: relative;
     display: block;
     width: var(--qw-checkmark-width);
@@ -35,12 +35,12 @@
   }
 
   &:hover {
-    .checkmark {
+    .Checkmark {
       border-color: var(--qw-color-brand);
     }
   }
 
-  & input:checked + .checkmark {
+  & input:checked + .Checkmark {
     border-color: var(--qw-color-brand);
     background-color: var(--qw-checkmark-background-color-active);
 
@@ -49,7 +49,7 @@
     }
   }
 
-  & input:disabled + .checkmark {
+  & input:disabled + .Checkmark {
     border-color: var(--qw-checkmark-border-color);
     background-color: var(--qw-color-disabled);
     cursor: not-allowed;
@@ -59,7 +59,7 @@
     }
   }
 
-  & input[aria-error='true'] + .checkmark {
+  & input[aria-error='true'] + .Checkmark {
     border-color: var(--qw-color-error);
   }
 }
