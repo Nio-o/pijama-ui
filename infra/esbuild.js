@@ -9,7 +9,10 @@ const format = 'esm'
 const outDir = './'
 
 const getEntryPoints = async () => {
-  const entryPoints = await Promise.all([glob('./src/**/!(*.stories|*.spec).(js|ts)(x)?'), glob('src/**/*.module.css')])
+  const entryPoints = await Promise.all([
+    glob('./src/ui/**/!(*.stories|*.spec).(js|ts)(x)?'),
+    glob('./src/ui/**/*.module.css'),
+  ])
   return entryPoints.reduce((acc, list) => [...acc, ...list], []).sort()
 }
 
