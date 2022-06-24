@@ -1,0 +1,13 @@
+import { withBemMod } from '@bem-react/core'
+
+import type { {{pascalCase blockName}}Props } from '../{{pascalCase blockName}}'
+
+import s from './{{pascalCase blockName}}_{{kebabCase modName}}_{{kebabCase modValue}}.module.js'
+
+export interface {{pascalCase blockName}}{{pascalCase modName}}{{pascalCase modValue}}Props {
+  {{pascalCase modName}}?: '{{kebabCase modValue}}'
+}
+
+export const withVariantBrand = withBemMod<{{pascalCase blockName}}{{pascalCase modName}}{{pascalCase modValue}}Props, {{pascalCase blockName}}Props>(s.{{pascalCase blockName}}, {
+  {{pascalCase modName}}: '{{kebabCase modValue}}',
+})

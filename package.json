@@ -21,7 +21,9 @@
     "lint:check:stylelint": "stylelint ./src/**/*.css",
     "lint:fix": "eslint --fix ./src && prettier --write ./src ./infra ./.storybook",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "new:block": "yarn run plop Block",
+    "new:mod": "yarn run plop Modifier"
   },
   "peerDependencies": {
     "@bem-react/classname": "^1.5.12",
