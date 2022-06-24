@@ -2,11 +2,12 @@ import React from 'react'
 
 import { cn } from '@bem-react/classname'
 
-import type { CommonPijamaProps, WithChildrenProp } from '../OverridableComponent/OverridableComponent.js'
+import type { CommonPijamaProps } from '../OverridableComponent/OverridableComponent.js'
 
 import s from './{{pascalCase name}}.module.js'
 
-export interface {{pascalCase name}}Props extends CommonPijamaProps, WithChildrenProp {
+export interface {{pascalCase name}}Props extends CommonPijamaProps {
+  children?: React.ReactNode
   /** Your props */
 }
 
