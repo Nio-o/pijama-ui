@@ -1,6 +1,0 @@
-.Button.Button_size_m {
-  min-width: var(--qw-button-size-m-min-width);
-  padding: var(--qw-button-size-m-padding);
-  font-size: var(--qw-button-size-m-font-size);
-  line-height: var(--qw-button-size-m-line-height);
-}

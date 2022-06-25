@@ -1,6 +1,0 @@
-export * from './_size/Button_size_l'
-export * from './_size/Button_size_m'
-export * from './_size/Button_size_s'
-export * from './_variant/Button_variant_brand'
-export * from './_variant/Button_variant_simple'
-export * from './Button'

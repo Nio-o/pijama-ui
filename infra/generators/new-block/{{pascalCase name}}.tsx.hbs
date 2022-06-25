@@ -2,21 +2,21 @@ import React from 'react'
 
 import { cn } from '@bem-react/classname'
 
-import type { CommonPijamaProps } from '../OverridableComponent/OverridableComponent.js'
+import { forwardRef } from '../forwardRef/forwardRef'
 
 import s from './{{pascalCase name}}.module.js'
 
-export interface {{pascalCase name}}Props extends CommonPijamaProps {
+export interface {{pascalCase name}}Props {
   children?: React.ReactNode
   /** Your props */
 }
 
 const cn{{pascalCase name}} = cn(s.{{pascalCase name}})
 
-export const {{pascalCase name}} = ({ style, className, children }: {{pascalCase name}}Props): JSX.Element | null => {
+export const {{pascalCase name}} = forwardRef<{{pascalCase name}}Props, 'div'>(({ className, children, as: AsComponent = 'div', ...rest }, ref): JSX.Element | null => {
   return (
-    <div className={cn{{pascalCase name}}(null, [className])} style={style}>
+    <AsComponent {...rest} ref={ref} className={cn{{pascalCase name}}(null, [className])}>
       {children}
-    </div>
+    </AsComponent>
   )
-}
+})

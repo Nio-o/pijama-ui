@@ -1,5 +1,0 @@
-export * from './Text_weight_bold'
-export * from './Text_weight_heavy'
-export * from './Text_weight_light'
-export * from './Text_weight_medium'
-export * from './Text_weight_normal'

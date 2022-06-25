@@ -11,17 +11,59 @@ describe('Components / {{pascalCase name}}', () => {
     expect(() => render(<{{pascalCase name}} />)).not.toThrow()
   })
 
-  it(`Should pass "style" to DOM node`, () => {
-    const style = { padding: '1px 2px 3px 4px' }
-    const { container } = render(<{{pascalCase name}} style={style} />)
+  describe('Props passing', () => {
+    const TEST_ID = 'test'
 
-    expect(container.firstChild).toHaveStyle(style)
+    it(`Should pass "style" to DOM node`, () => {
+      const style = { padding: '1px 2px 3px 4px' }
+      const container = render(<{{pascalCase name}} data-testid={TEST_ID} style={style} />)
+
+      expect(container.getByTestId(TEST_ID)).toHaveStyle(style)
+    })
+
+    it(`Should pass "className" to DOM node`, () => {
+      const className = 'test-forward-me'
+      const container = render(<{{pascalCase name}} data-testid={TEST_ID} className={className} />)
+
+      expect(container.getByTestId(TEST_ID)).toHaveClass(className)
+    })
   })
 
-  it(`Should pass "className" to DOM node`, () => {
-    const className = 'test-forward-me'
-    const { container } = render(<{{pascalCase name}} className={className} />)
+  describe('Prop "as"', () => {
+    const TEST_ID = 'test'
 
-    expect(container.firstChild).toHaveClass(className)
+    it(`Should render as "a", pass "href" and ref`, () => {
+      const ref = { current: null }
+      const href = '/example'
+      const container = render(<{{pascalCase name}} as="a" ref={ref} href={href} data-testid={TEST_ID} />)
+      const component = container.getByTestId(TEST_ID)
+
+      expect(ref.current).toBeDefined();
+      expect(component.tagName.toLocaleLowerCase()).toBe('a')
+      expect(component).toHaveAttribute('href', href)
+    })
+
+    it(`Should render as "button", pass "disabled" and ref`, () => {
+      const ref = { current: null }
+      const container = render(<{{pascalCase name}} as="button" ref={ref} disabled data-testid={TEST_ID} />)
+      const component = container.getByTestId(TEST_ID)
+
+      expect(ref.current).toBeDefined();
+      expect(component).toHaveAttribute('disabled')
+    })
+
+    it(`Should render as custom functional component, pass props and ref`, () => {
+      const ref = { current: null }
+      const TestComp = React.forwardRef<HTMLSpanElement, { to: string }>(({ to, ...rest }, ref) => (
+        <span ref={ref} {...rest}>
+          {to}
+        </span>
+      ))
+      const to = 'test-me'
+      const container = render(<{{pascalCase name}} as={TestComp} ref={ref} to={to} data-testid={TEST_ID} />)
+
+      expect(ref.current).toBeDefined();
+      expect(container.getByTestId(TEST_ID)).toHaveTextContent(to)
+    })
   })
 })

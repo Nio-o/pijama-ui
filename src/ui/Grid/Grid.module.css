@@ -1,7 +1,0 @@
-.Grid {
-  display: var(--qw-grid-display);
-  grid-template-columns: var(--qw-grid-grid-template-columns);
-  grid-gap: var(--qw-grid-grid-gap);
-  max-width: var(--qw-grid-max-width);
-  margin: var(--qw-grid-margin);
-}
