@@ -15,3 +15,6 @@
 
 # Storybook assets
 /storybook-static
+
+
+/src/ui/Theme/presets

@@ -1,8 +1,9 @@
 import { useLayoutEffect, useRef } from 'react'
 import isChromatic from 'chromatic/isChromatic'
-import { Symbols } from '@storybook/components'
 
-import { attachTheme, themeVariantDefault, themeVariantFormal } from 'pijama/ui/Theme'
+import { attachTheme } from 'pijama/ui/Theme'
+import themeVariantDefault from 'pijama/ui/Theme/presets/default'
+import themeVariantFormal from 'pijama/ui/Theme/presets/formal'
 
 export const withThemes = (Story, { globals, parameters }) => {
   const defaultThemeRoot = useRef()
