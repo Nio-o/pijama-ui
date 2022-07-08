@@ -2,19 +2,7 @@
 // Credits to Chakra-UI
 import type React from 'react'
 
-export interface PijamaProps {
-  className?: string
-  style?: React.CSSProperties
-}
-
 export type As = React.ElementType
-
-/**
- * Extract the props of a React element or component
- */
-export type PropsOf<T extends As> = React.ComponentPropsWithoutRef<T> & {
-  as?: As
-}
 
 export type OmitCommonProps<Target, OmitAdditionalProps extends keyof any = never> = Omit<
   Target,
@@ -33,9 +21,11 @@ export type MergeWithAs<
   AsComponent extends As,
 > = RightJoinProps<RightJoinProps<AsProps, AdditionalProps>, { as?: AsComponent }>
 
+export type WithoutChildren<T> = T extends {} ? Omit<T, 'children'> : {}
+
 export type ComponentWithAs<Component extends As, Props extends {} = {}> = {
   <AsComponent extends As = Component>(
-    props: MergeWithAs<React.ComponentProps<AsComponent>, Props, AsComponent>,
+    props: MergeWithAs<WithoutChildren<React.ComponentProps<AsComponent>>, Props, AsComponent>,
   ): JSX.Element
 
   displayName?: string
@@ -45,4 +35,4 @@ export type ComponentWithAs<Component extends As, Props extends {} = {}> = {
   id?: string
 }
 
-export type PijamaComponent<T extends As, P = {}> = ComponentWithAs<T, PijamaProps & P>
+export type PijamaComponent<T extends As, P = {}> = ComponentWithAs<T, P>

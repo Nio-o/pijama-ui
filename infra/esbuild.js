@@ -3,15 +3,14 @@ const { nodeExternalsPlugin } = require('esbuild-node-externals')
 const esbuild = require('esbuild')
 const glob = require('fast-glob')
 const cssModulesPlugin = require('./esbuild-css-modules')
-
 const target = 'es2020'
-const format = 'esm'
-const outDir = './'
+const format = process.argv.includes('--cjs') ? 'cjs' : 'esm'
+const outDir = `./dist/${format}`
 
 const getEntryPoints = async () => {
   const entryPoints = await Promise.all([
-    glob('./src/ui/**/!(*.stories|*.spec).(js|ts)(x)?'),
-    glob('./src/ui/**/*.module.css'),
+    glob('./src/**/!(*.stories|*.spec).(js|ts)(x)?'),
+    glob('./src/**/*.module.css'),
   ])
   return entryPoints.reduce((acc, list) => [...acc, ...list], []).sort()
 }

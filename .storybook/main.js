@@ -1,7 +1,7 @@
 const path = require('node:path')
 
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../packages/**/*.stories.mdx', '../packages/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,16 +14,23 @@ module.exports = {
   },
   typescript: {
     check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => {
+        const isHTMLElementProp = prop.parent?.fileName.includes('node_modules') ?? false
+        return true
+      },
+    },
   },
+
   features: {
     storyStoreV7: true,
-  },
-  webpackFinal: async (config, { configType }) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      pijama: path.resolve(__dirname, '../'),
-    }
-
-    return config
   },
 }

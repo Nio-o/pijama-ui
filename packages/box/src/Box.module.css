@@ -1,0 +1,79 @@
+@define-mixin box-margin $modValue {
+  &_m_$(modValue) {
+    margin: var(--qw-spacer-$(modValue));
+  }
+
+  &_mt_$(modValue) {
+    margin-top: var(--qw-spacer-$(modValue));
+  }
+
+  &_mr_$(modValue) {
+    margin-right: var(--qw-spacer-$(modValue));
+  }
+
+  &_mb_$(modValue) {
+    margin-bottom: var(--qw-spacer-$(modValue));
+  }
+
+  &_ml_$(modValue) {
+    margin-left: var(--qw-spacer-$(modValue));
+  }
+}
+
+@define-mixin box-padding $modValue {
+  &_p_$(modValue) {
+    padding: var(--qw-padding-$(modValue));
+  }
+
+  &_pt_$(modValue) {
+    padding-top: var(--qw-padding-$(modValue));
+  }
+
+  &_pr_$(modValue) {
+    padding-right: var(--qw-padding-$(modValue));
+  }
+
+  &_pb_$(modValue) {
+    padding-bottom: var(--qw-padding-$(modValue));
+  }
+
+  &_pl_$(modValue) {
+    padding-left: var(--qw-padding-$(modValue));
+  }
+}
+
+@define-mixin box-display $modValue {
+  &_p_$(modValue) {
+    padding: var(--qw-padding-$(modValue));
+  }
+
+  &_pt_$(modValue) {
+    padding-top: var(--qw-padding-$(modValue));
+  }
+
+  &_pr_$(modValue) {
+    padding-right: var(--qw-padding-$(modValue));
+  }
+
+  &_pb_$(modValue) {
+    padding-bottom: var(--qw-padding-$(modValue));
+  }
+
+  &_pl_$(modValue) {
+    padding-left: var(--qw-padding-$(modValue));
+  }
+}
+
+.Box {
+  @mixin box-margin xxs;
+  @mixin box-margin xs;
+  @mixin box-margin s;
+  @mixin box-margin m;
+  @mixin box-margin l;
+  @mixin box-margin xl;
+  @mixin box-margin 2xl;
+
+  @mixin box-padding s;
+  @mixin box-padding m;
+  @mixin box-padding l;
+}

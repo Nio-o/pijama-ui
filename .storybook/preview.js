@@ -1,11 +1,9 @@
-import '@qiwi/pijma-fonts'
-
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-import { withThemes } from './decorators/withThemes'
+// import { withThemes } from './decorators/withThemes'
 import { withStrictMode } from './decorators/withStrictMode'
 
-export const decorators = [withStrictMode, withThemes]
+export const decorators = [withStrictMode]
 
 export const globalTypes = {
   theme: {

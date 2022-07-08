@@ -10,11 +10,20 @@
 /*.log
 /node_modules
 
-# Dist (match with src/*)
-/ui
-
 # Storybook assets
 /storybook-static
 
+/packages/*/dist
 
-/src/ui/Theme/presets
+# Yarn berry
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+**/.npmrc
+**/.yarnrc
+**/.pnpmrc

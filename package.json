@@ -4,42 +4,28 @@
   "author": "Evgeniy Malchenko",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "clean": "rimraf ./ui && rimraf ./src/ui/Theme/presets",
-    "bundle": "node ./infra/bundles.js",
     "build-storybook": "build-storybook",
-    "build-tokens": "node ./infra/tokens/build.js",
-    "prebuild": "yarn run clean && yarn run build-tokens",
-    "build": "concurrently \"yarn:build:*\" -g",
-    "build:kit": "node ./infra/esbuild.js",
-    "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
-    "predev": "yarn run clean && yarn run build-tokens",
-    "dev": "concurrently \"yarn:dev:*\"",
-    "dev:kit": "node ./infra/esbuild.js --watch",
-    "dev:kit:types": "tsc -p tsconfig.build.json --emitDeclarationOnly --watch",
-    "dev:storybook": "start-storybook -p 6006",
-    "dev:tokens": "chokidar  \"./src/**/*.tokens.json\" -c \"yarn run build-tokens\"",
+    "start-storybook": "start-storybook -p 6006",
+    "build": "yarn workspaces foreach --parallel --topological-dev --no-private run build",
+    "prewatch": "yarn run build",
+    "watch": "yarn workspaces foreach -i --parallel --no-private run watch",
     "lint": "concurrently \"yarn:lint:check:*\" -g",
-    "lint:check:eslint": "eslint --max-warnings 0 ./src",
-    "lint:check:prettier": "prettier --check ./src ./infra ./.storybook",
-    "lint:check:stylelint": "stylelint ./src/**/*.css",
-    "lint:fix": "eslint --fix ./src && prettier --write ./src ./infra ./.storybook",
+    "lint:check:eslint": "eslint --max-warnings 0 './packages/*/src/**'",
+    "lint:check:prettier": "prettier --check './packages/*/src/**'",
+    "lint:check:stylelint": "stylelint './packages/*/src/**/*.css'",
     "test": "jest",
     "test:watch": "jest --watch",
     "new:block": "yarn run plop Block",
     "new:mod": "yarn run plop Modifier"
   },
-  "peerDependencies": {
-    "@bem-react/classname": "^1.5.12",
-    "@bem-react/core": "^3.0.8",
-    "react": "^17.0.2"
-  },
   "resolutions": {
     "@types/react": "^17.0.2"
   },
   "devDependencies": {
-    "@bem-react/classname": "^1.5.12",
-    "@bem-react/core": "^3.0.8",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -53,7 +39,6 @@
     "@testing-library/react": "^12.1.5",
     "@types/jest": "^28.1.1",
     "@types/react": "^17.0.2",
-    "chokidar-cli": "^3.0.0",
     "chromatic": "^6.5.6",
     "concurrently": "^7.2.2",
     "esbuild": "^0.14.43",
@@ -75,7 +60,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
-    "style-dictionary": "^3.7.1",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^26.0.0",
@@ -83,7 +67,5 @@
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.3"
   },
-  "dependencies": {
-    "@qiwi/pijma-fonts": "^1.0.0"
-  }
+  "packageManager": "yarn@3.2.1"
 }

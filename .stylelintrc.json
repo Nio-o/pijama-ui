@@ -13,7 +13,7 @@
     "color-hex-length": "long",
     "color-hex-case": "lower",
     "at-rule-no-unknown": null,
-    "custom-property-pattern": "^qw-([a-z][a-z0-9]*)(-[a-z0-9]+)*(--[a-z0-9]+)*$",
+    "custom-property-pattern": "^qw-.+$",
     "no-descending-specificity": true,
     "order/order": [
       [
