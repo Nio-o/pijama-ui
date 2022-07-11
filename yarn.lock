@@ -11407,6 +11407,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jest-matchmedia-mock@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "jest-matchmedia-mock@npm:1.1.0"
+  peerDependencies:
+    jest: ">=13"
+  checksum: e812b9dce5a3b55057ec0db47fe07737d24f248d0ee5eb41754244ecb8ea9b906581af2c1ae434b4db8a037ce3e437af6c53075ac86538a56ce55e2645ea0138
+  languageName: node
+  linkType: hard
+
 "jest-message-util@npm:^28.1.1":
   version: 28.1.1
   resolution: "jest-message-util@npm:28.1.1"
@@ -13994,6 +14003,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest: ^28.1.1
     jest-environment-jsdom: ^28.1.1
+    jest-matchmedia-mock: ^1.1.0
     plop: ^3.1.1
     postcss: ^8.4.14
     postcss-mixins: ^9.0.2
