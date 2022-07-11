@@ -9,6 +9,7 @@ module.exports = {
   },
   restoreMocks: true,
   resetMocks: true,
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
   moduleNameMapper: {
     '\\.module\\.js$': 'identity-obj-proxy',
   },

@@ -29,6 +29,7 @@ export const Box = forwardRef<BoxProps, 'div'>((props, ref): JSX.Element | null 
   return (
     <AsComponent {...rest} ref={ref} className={cnBox(styled as NoStrictEntityMods, [className])}>
       {children}
+      <div style={{}}></div>
     </AsComponent>
   )
 })
