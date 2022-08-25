@@ -1,19 +1,12 @@
+import { StyleProps } from '../types/styles'
+
 type StyleName = string | string[]
 type StyleHandler = (value: any) => string | undefined
 
 export type DimensionValue = string
 
-type ResponsiveProp<T> = {
-  base?: T
-  S?: T
-  M?: T
-  L?: T
-  [custom: string]: T | undefined
-}
-type Responsive<T> = T | ResponsiveProp<T>
-
-export interface StyleHandlers {
-  [key: string]: [StyleName, StyleHandler]
+export type StyleHandlers = {
+  [key in keyof StyleProps]: [StyleName, StyleHandler]
 }
 
 export const passthroughStyle = (value: any) => {
@@ -22,6 +15,7 @@ export const passthroughStyle = (value: any) => {
 
 const UNIT_RE = /(%|px|em|rem|vw|vh|auto|cm|mm|in|pt|pc|ex|ch|vmin|vmax|fr)$/
 const FUNC_RE = /^\s*\w+\(/
+const SPECTRUM_VARIABLE_RE = /(static-)?size-\d+|single-line-(height|width)/g
 
 export const dimensionValue = (value: DimensionValue) => {
   if (typeof value === 'number') {
@@ -33,10 +27,10 @@ export const dimensionValue = (value: DimensionValue) => {
   }
 
   if (FUNC_RE.test(value)) {
-    return value.replace(SPECTRUM_VARIABLE_RE, 'var(--spectrum-global-dimension-$&, var(--spectrum-alias-$&))')
+    return value.replace(SPECTRUM_VARIABLE_RE, 'var(--pijama-global-dimension-$&, var(--pijama-alias-$&))')
   }
 
-  return `var(--spectrum-global-dimension-${value}, var(--spectrum-alias-${value}))`
+  return `var(--pijama-global-dimension-${value}, var(--pijama-alias-${value}))`
 }
 
 const hiddenValue = (value: any) => {
@@ -53,8 +47,8 @@ const flexValue = (value: boolean | number | string) => {
 
 export const baseStyleProps: StyleHandlers = {
   margin: ['margin', dimensionValue],
-  marinLeft: ['marginLeft', dimensionValue],
-  marinRight: ['marginRight', dimensionValue],
+  marginLeft: ['marginLeft', dimensionValue],
+  marginRight: ['marginRight', dimensionValue],
   marginTop: ['marginTop', dimensionValue],
   marginBottom: ['marginBottom', dimensionValue],
   marginX: [['marginLeft', 'marginRight'], dimensionValue],

@@ -2270,17 +2270,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pijama/theme@workspace:packages/theme":
-  version: 0.0.0-use.local
-  resolution: "@pijama/theme@workspace:packages/theme"
-  dependencies:
-    concurrently: ^7.2.2
-    react: ^17.0.2
-    rimraf: ^3.0.2
-    typescript: ^4.7.3
-  languageName: unknown
-  linkType: soft
-
 "@pmmmwh/react-refresh-webpack-plugin@npm:^0.5.3":
   version: 0.5.7
   resolution: "@pmmmwh/react-refresh-webpack-plugin@npm:0.5.7"

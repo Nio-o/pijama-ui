@@ -1,0 +1,124 @@
+.Theme--default {
+  /* Colors */
+  --pijama-global-color-black: #272a35;
+  --pijama-global-color-gray: #d9d9d9;
+  --pijama-global-color-gray-dark: #7e7f85;
+  --pijama-global-color-gray-light: #f9f9f9;
+  --pijama-global-color-orange: #ff6f00;
+  --pijama-global-color-green: #87df17;
+  --pijama-global-color-green-light: #dbf5b9;
+  --pijama-global-color-red: #ea3737;
+  --pijama-global-color-red-light: #ffe3e3;
+
+  /* Opacity */
+  --pijama-global-color-opacity-100: 1;
+  --pijama-global-color-opacity-90: 0.9;
+  --pijama-global-color-opacity-80: 0.8;
+  --pijama-global-color-opacity-60: 0.6;
+  --pijama-global-color-opacity-50: 0.5;
+  --pijama-global-color-opacity-42: 0.42;
+  --pijama-global-color-opacity-40: 0.4;
+  --pijama-global-color-opacity-30: 0.3;
+  --pijama-global-color-opacity-25: 0.25;
+  --pijama-global-color-opacity-20: 0.2;
+  --pijama-global-color-opacity-15: 0.15;
+  --pijama-global-color-opacity-10: 0.1;
+  --pijama-global-color-opacity-8: 0.08;
+  --pijama-global-color-opacity-7: 0.07;
+  --pijama-global-color-opacity-6: 0.06;
+  --pijama-global-color-opacity-5: 0.05;
+  --pijama-global-color-opacity-4: 0.04;
+
+  /* Sizes */
+  --pijama-global-dimension-size-0: 0;
+  --pijama-global-dimension-size-1: 4px;
+  --pijama-global-dimension-size-2: 8px;
+  --pijama-global-dimension-size-3: 12px;
+  --pijama-global-dimension-size-4: 16px;
+  --pijama-global-dimension-size-5: 20px;
+  --pijama-global-dimension-size-6: 24px;
+  --pijama-global-dimension-size-7: 28px;
+  --pijama-global-dimension-size-8: 32px;
+  --pijama-global-dimension-size-9: 36px;
+  --pijama-global-dimension-size-10: 40px;
+  --pijama-global-dimension-size-11: 44px;
+  --pijama-global-dimension-size-12: 48px;
+  --pijama-global-dimension-size-13: 52px;
+  --pijama-global-dimension-size-14: 56px;
+  --pijama-global-dimension-size-15: 60px;
+  --pijama-global-dimension-size-16: 64px;
+  --pijama-global-dimension-size-17: 68px;
+  --pijama-global-dimension-size-18: 72px;
+  --pijama-global-dimension-size-19: 76px;
+  --pijama-global-dimension-size-20: 80px;
+  --pijama-global-dimension-size-21: 84px;
+  --pijama-global-dimension-size-22: 88px;
+  --pijama-global-dimension-size-23: 92px;
+  --pijama-global-dimension-size-24: 96px;
+  --pijama-global-dimension-size-25: 100px;
+  --pijama-global-dimension-size-26: 104px;
+  --pijama-global-dimension-size-27: 108px;
+  --pijama-global-dimension-size-28: 112px;
+  --pijama-global-dimension-size-29: 116px;
+  --pijama-global-dimension-size-30: 120px;
+  --pijama-global-dimension-size-31: 124px;
+  --pijama-global-dimension-size-32: 128px;
+  --pijama-global-dimension-size-33: 132px;
+  --pijama-global-dimension-size-34: 136px;
+  --pijama-global-dimension-size-35: 140px;
+  --pijama-global-dimension-size-36: 144px;
+  --pijama-global-dimension-size-37: 148px;
+  --pijama-global-dimension-size-38: 152px;
+  --pijama-global-dimension-size-39: 156px;
+  --pijama-global-dimension-size-40: 160px;
+  --pijama-global-dimension-size-41: 164px;
+  --pijama-global-dimension-size-42: 168px;
+  --pijama-global-dimension-size-43: 172px;
+  --pijama-global-dimension-size-44: 176px;
+  --pijama-global-dimension-size-45: 180px;
+  --pijama-global-dimension-size-46: 184px;
+  --pijama-global-dimension-size-47: 188px;
+  --pijama-global-dimension-size-48: 192px;
+  --pijama-global-dimension-size-49: 196px;
+  --pijama-global-dimension-size-50: 200px;
+
+  /* Font family */
+  --pijama-global-font-family-sussie: 'Sussie Intl';
+  --pijama-global-font-family-agipo: 'Agipo';
+  --pijama-global-font-family-code: 'Source Code Pro', monaco, monospace;
+
+  /* Font weight */
+  --pijama-global-font-weight-thin: 100;
+  --pijama-global-font-weight-ultra-light: 200;
+  --pijama-global-font-weight-light: 300;
+  --pijama-global-font-weight-regular: 400;
+  --pijama-global-font-weight-medium: 500;
+  --pijama-global-font-weight-semi-bold: 600;
+  --pijama-global-font-weight-bold: 700;
+  --pijama-global-font-weight-extra-bold: 800;
+  --pijama-global-font-weight-black: 900;
+
+  /* Font style */
+  --pijama-global-font-style-regular: normal;
+  --pijama-global-font-style-italic: italic;
+  --pijama-global-font-letter-spacing-none: 0;
+  --pijama-global-font-letter-spacing-small: 0.0125em;
+  --pijama-global-font-letter-spacing-han: 0.05em;
+  --pijama-global-font-letter-spacing-medium: 0.06em;
+
+  /* Line height */
+  --pijama-global-line-height-3xl: 41px;
+  --pijama-global-line-height-2xl: 32px;
+  --pijama-global-line-height-l: 22px;
+  --pijama-global-line-height-m: 18px;
+  --pijama-global-line-height-s: 12px;
+
+  /** Line height */
+  --pijama-global-line-height-4xl: 40px;
+  --pijama-global-line-height-3xl: 30px;
+  --pijama-global-line-height-2xl: 20px;
+  --pijama-global-line-height-l: 19px;
+  --pijama-global-line-height-m: 16px;
+  --pijama-global-line-height-s: 14px;
+  --pijama-global-line-height-xs: 10px;
+}
