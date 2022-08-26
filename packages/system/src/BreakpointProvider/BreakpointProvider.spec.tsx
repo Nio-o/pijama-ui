@@ -4,8 +4,8 @@
 import MatchMediaMock from 'jest-matchmedia-mock'
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
-import type { Breakpoints } from '../BreakpointProvider'
-import { useBreakpoint, BreakpointProvider } from '../BreakpointProvider'
+import type { Breakpoints } from './BreakpointProvider'
+import { useBreakpoint, BreakpointProvider } from './BreakpointProvider'
 
 const mediaQueryS = '(min-width: 360px)'
 const mediaQueryM = '(min-width: 1280px)'
